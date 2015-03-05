@@ -35,6 +35,10 @@ div {
   background-color: limegreen;
 }
 
+.js-box-show {
+  
+}
+
 .diamond {
   height: 80px;
   right: 2em;
@@ -68,6 +72,53 @@ div {
 
   background-color: orange;
   border-radius: 50%;
+}
+
+.js-ball-bounce {
+  -webkit-animation: ball-bounce 1s linear;
+  animation: ball-bounce 1s linear;
+}
+
+@-webkit-keyframes ball-bounce {
+  0% {
+    top: 300px;
+  }
+  25% {
+    top: 400px;
+  }
+  50% {
+    top: 350px;
+  }
+  75% {
+    top: 400px;
+  }
+  90% {
+    top: 380px;
+  }
+  100% {
+    top: 400px;
+  }
+}
+
+@keyframes ball-bounce {
+  0% {
+    top: 300px;
+  }
+  25% {
+    top: 400px;
+  }
+  50% {
+    top: 350px;
+  }
+  75% {
+    top: 400px;
+  }
+  90% {
+    top: 380px;
+  }
+  100% {
+    top: 400px;
+  }
 }
 
 .list {
