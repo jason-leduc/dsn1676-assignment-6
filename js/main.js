@@ -27,3 +27,15 @@ $('.btn-bounce').on('click', function (e) {
 	// console.log('clicked-bounce')
 	$circle.addClass('js-bounce');
 });
+
+$circle.on('webkitAnimationEnd animationend', function() {
+	// console.log('animation-end');
+	$circle.removeClass('js-bounce');
+});
+
+$('.btn-append').on('click', function (e) {
+	e.preventDefault();
+	// console.log('clicked-append')
+	var $li = $('<li>').html('New List Item');
+	$list.prepend($li);
+});
