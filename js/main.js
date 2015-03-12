@@ -16,3 +16,14 @@ $('.btn-move').on('click', function (e) {
 	$diamond.toggleClass('js-move');
 });
 
+$('.btn-collapse-expand').on('click', function (e) {
+	e.preventDefault();
+	// console.log('clicked-collapse-expand')
+	$panel.animate({height: 'toggle'});
+});
+
+$('.btn-bounce').on('click', function (e) {
+	e.preventDefault();
+	// console.log('clicked-bounce')
+	$circle.addClass('js-bounce');
+});
