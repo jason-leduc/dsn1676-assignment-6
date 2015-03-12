@@ -15,6 +15,7 @@ section {
   position: relative;
 
   border-bottom: 1px solid #ccc;
+  overflow: hidden;
 }
 
 section:nth-child(5) {
@@ -33,20 +34,33 @@ div {
   width: 200px;
 
   background-color: limegreen;
+
+  opacity: 0;
+  -webkit-transition: opacity 200ms;
+  transition: opacity 200ms;
 }
 
-.js-box-show {
-  
+.js-show-hide {
+  opacity: 1;
 }
+
 
 .diamond {
   height: 80px;
-  right: 2em;
+  right: -8em;
   top: calc(50% - 40px);
   width: 80px;
 
   background-color: hotpink;
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: right 200ms;
   transform: rotate(45deg);
+  transition: right 200ms;
+}
+
+.js-move {
+  right: 2em;
+
 }
 
 .panel {
@@ -54,10 +68,14 @@ div {
   top: 50%;
 
   background-color: yellow;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 
   color: darkgoldenrod;
   text-align: center;
+  overflow: hidden;
+  -webkit-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .panel h2 {
@@ -74,50 +92,44 @@ div {
   border-radius: 50%;
 }
 
-.js-ball-bounce {
-  -webkit-animation: ball-bounce 1s linear;
-  animation: ball-bounce 1s linear;
+.js-bounce {
+  -webkit-animation: bounce 0.75s ease-in-out;
+  animation: bounce 0.75s ease-in-out;
 }
 
-@-webkit-keyframes ball-bounce {
+@-webkit-keyframes bounce {
   0% {
-    top: 300px;
+    -webkit-transform: translate(0px);
   }
   25% {
-    top: 400px;
+    -webkit-transform: translate(-50px, -25px);
   }
   50% {
-    top: 350px;
+    -webkit-transform: translate(-100px, 20px);
   }
   75% {
-    top: 400px;
-  }
-  90% {
-    top: 380px;
+    -webkit-transform: translate(-150px, -15px);
   }
   100% {
-    top: 400px;
+    -webkit-transform: translate(-200px, 10px);
   }
 }
 
-@keyframes ball-bounce {
+@keyframes bounce {
   0% {
-    top: 300px;
+    transform: translate(0px);
   }
   25% {
-    top: 400px;
+    transform: translate(-50px, -25px);
   }
   50% {
-    top: 350px;
+    transform: translate(-100px, 20px);
   }
   75% {
-    top: 400px;
-  }
-  90% {
-    top: 380px;
+    transform: translate(-150px, -15px);
   }
   100% {
-    top: 400px;
+    transform: translate(-200px, 10px);
   }
 }
 
@@ -136,10 +148,31 @@ div {
 }
 
 .list li {
+  -webkit-animation: prepend 200ms ease-in-out;
+  animation: prepend 200ms ease-in-out;
   padding: 0.5em;
+  overflow: hidden;
 
   background-color: plum;
   border: 1px solid mediumpurple;
 
   color: mediumpurple;
+}
+
+@-webkit-keyframes prepend {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 2em;
+  }
+}
+
+@keyframes prepend {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 2em;
+  }
 }
